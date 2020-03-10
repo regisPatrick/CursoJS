@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Informa Nacionalidade</title>
+    <style>
+            body{
+                background: rgb(45, 119, 30);
+                color: white;
+                font: normal 10pt Arial;
+            }
+            div{
+                background: blue;
+                color: black;
+                font: normal 15pt Times;
+            }
+            input{
+                background: black;
+                color: white;
+                font: normal 10pt Arial bolder;
+            }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Informe a Nacionalidade: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="informar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar(){
+            var txtn = window.document.querySelector('input#txtnac')
+            var res = window.document.getElementById('res')
+            var nac = String(txtn.value)
+            res.innerHTML = `<p>O seu país de origem é <strong>${nac}</strong>!!!</p>`
+                if(nac == 'Brasil'){
+                    res.innerHTML += `<p>Você é <strong>brasileiro</strong>!!!</p>`
+                 }else{
+                    res.innerHTML += `<p>Você é <strong>estrangeiro</strong>!!!</p>`
+                }
+            res.innerHTML += `<p><strong>Obrigado!!!</strong></p>`
+        }
+    </script>
+</body>
+</html>
